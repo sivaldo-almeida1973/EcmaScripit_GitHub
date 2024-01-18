@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso EcmaScript</title>
+
+  <script>
+
+       //parametros default
+       function contarHistoria(personagem = 'Fubá', atividade='Brincar', nome_dono='José') {
+
+        document.write(`Era uma vez um cachorro ${personagem}, ele adorava ${atividade}, seu dono era o ${nome_dono} e eles viveram felizes para sempre `)
+
+       }
+       //parametros passados aqui sobrescrevem os default
+      //  contarHistoria('Repolho' ,'correr', 'Pedro')
+       contarHistoria(undefined ,'correr', 'Pedro')
+     
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
