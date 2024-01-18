@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso EcmaScript</title>
+
+
+  <script>
+    //escopo: global esta disponivel a todos os outros 
+   
+
+    // var serie = 'friends'
+
+    // function x() {
+
+    //   console.log(serie)
+
+    //   if(true) {
+    //     console.log(serie)
+
+    //   }
+    // }
+
+    // x ()
+
+
+    // if(true) {
+
+    //   console.log(serie)
+
+    // }
+
+
+     //escopo: funcao esta disponivel para a funcao, e para os escopos de blocos contidos dentro todos os outros 
+
+    // var serie = 'friends'
+
+    // function x() {
+    //   var serie = 'Game Of Thrones'
+    //   console.log('Escopo da funcao: ',serie)
+
+    //   if(true) {
+    //     console.log('Escopo do bloco if dentro da funcao: ',serie)
+
+    //   }
+    // }
+
+    // x ()
+
+
+    // if(true) {
+
+    //   console.log('Escopo global: ',serie)
+
+    // }
+
+
+
+  
+
+    // function x() {
+   
+    //   console.log('Escopo do bloco dentro da funcao: ',serie)
+    //   if(true) {
+    
+    //   }
+    // }
+
+    // //variavel criada dentro do escopo de bloco if foora da funcao ,sofre uma elevacao para o escopo da funcao e para o global global
+    // if(true) {
+    //   var serie = 'The Walking Dead'
+    //   console.log('Escopo do bloco fora da funcao: ',serie)
+
+    // }
+    // //chamada da funcao
+    // x ()
+
+    // console.log('Escopo global: ',serie)
+
+
+
+
+    // function x() {
+   
+    //   console.log('Escopo do bloco dentro da funcao: ',serie)
+
+    //   //variavel criada dentro do bloco if que esta na funcao, não ficarar disponivel para o escopo global e nem para o bloco fora da funcao
+    //   if(true) {
+
+    //     var serie = 'The Walking Dead'
+    //     console.log('Escopo do bloco fora da funcao: ',serie)
+
+    
+    //     }
+    //   }
+
+    //   if(true) {
+    //     console.log('Escopo global: ',serie)
+    //   }
+
+    //   //chamada da funcao
+    //   x ()
+
+    //   console.log('Escopo global: ',serie)
+
+
+
+    //exemplo com let, que preserva o escopo onde foi criada a vaiavel
+
+    if(true) {
+      let serie = 'friends'
+      console.log(serie)
+    }
+    //se tentar chamar no escopo global tera um erro
+    // console.log(serie)
+
+
+
+  </script>
+
+</head>
+<body>
+  
+</body>
+</html>
