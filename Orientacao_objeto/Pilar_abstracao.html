@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso EcmaScript</title>
+
+  <script>
+
+     //class é o modelo do objeto(não é o objeto)
+     class contaBancaria {
+
+      constructor() { // atributos(caracteristicas)
+
+        this.agencia = 1075
+        this.numeroConta = 828383
+        this.saldo = 50
+        this.limite = 450
+      }
+
+      //metodos(acoes)
+      depositar(valorDeposito) {
+
+        this.saldo += valorDeposito
+      }
+
+      sacar(valorSaque) {
+        this.saldo -= valorSaque 
+
+      }
+
+      consultarSaldo() {
+        return this.saldo
+
+      }
+                  
+     }
+
+     //identidade(objeto)
+     let x = new contaBancaria()
+     let y = new contaBancaria()
+
+    //  //metodo consultarSaldo
+     console.log('saldo: ',x.consultarSaldo())
+
+     //metodo fazer um deposito
+     x.depositar(450)
+    
+
+      //metodo consultarSaldo
+     console.log('saldo: ',x.consultarSaldo())
+
+      //metodo sacar
+     x.sacar(200)
+    
+
+      //metodo consultarSaldo
+     console.log('saldo: ',x.consultarSaldo())
+     
+
+  </script>
+
+</head>
+<body>
+  
+</body>
+</html>
