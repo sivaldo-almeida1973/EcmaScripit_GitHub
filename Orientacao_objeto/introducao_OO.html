@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso EcmaScript</title>
+
+  <script>
+     //paradigma procedural
+
+      //  let a = 10
+      //  let b = 7
+      //  let operador = 'soma'
+
+      //  function calcular(a, b, operador) {
+
+      //   if(operador === 'soma') {
+      //     console.log(a + b)
+      //   }
+      //  }
+
+      //  calcular(a, b, operador)
+
+
+      
+      //objeto calculadora==================
+      class Calculadora {
+
+        constructor() {
+          this.a = 10
+          this.b = 7
+          this.operador = 'soma'
+        }
+
+        calcular() {  //funcao calcular==============
+          if(this.operador === 'soma') {
+            console.log(this.a * this.b)
+          }
+        }
+      }
+
+      Calculadora = new Calculadora()
+      Calculadora.calcular()
+
+  </script>
+
+</head>
+<body>
+  
+</body>
+</html>
