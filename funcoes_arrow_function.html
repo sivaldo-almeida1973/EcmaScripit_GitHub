@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso EcmaScript</title>
+
+  <script>  
+        //funcao anonima
+        //criar uma variavel (quadrado) ,que vai ser atribuida a ela uma funcao anonima, que vai receber um parametro, e retornar o quadrado desse parametro
+
+        // let quadrado = function(x= 5) {// valor default
+        //   return x * x
+        // }
+        //   //chamada da funcao
+        // document.write(quadrado(10))
+
+
+        //arrow function===============================
+        // let quadrado = x => //pode ser dessa forma caso seja só 1 valor
+
+        // let quadrado = (x) => {
+        //   return x * x
+        // }
+
+
+        // let quadrado = x => x * x  //return implicito
+  
+        // document.write(quadrado(10))
+
+
+
+
+        //====================================
+        //funcao anonima
+
+        // let parOuImpar = function(numero) {
+        //   if(numero % 2 === 0) {
+        //     return 'par'
+        //   } else {
+        //     return 'impar'
+        //   }
+        // }
+
+        // document.write(parOuImpar(7))
+
+
+        
+        //====================================
+        //arrow function
+
+        // let parOuImpar = numero => { 
+        //   if(numero % 2 === 0) {
+        //     return 'par'
+        //   } else {
+        //     return 'impar'
+        //   }
+        // }
+
+
+        // document.write(parOuImpar(7))
+
+
+
+        //========================================
+        
+        let parOuImpar = numero => numero % 2 === 0 ? 'par':'impar'
+        
+        document.write(parOuImpar(101))
+
+
+
+
+
+
+
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
