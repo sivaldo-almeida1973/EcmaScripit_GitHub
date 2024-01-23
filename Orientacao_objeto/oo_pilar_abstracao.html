@@ -60,7 +60,7 @@
 
 
       //OO=============================================
-       class classeCadeiras {
+       class classeCadeira {
 
         constructor(qtde_pernas, giratoria, cor) {
           this.qtde_pernas = qtde_pernas
@@ -76,17 +76,19 @@
           }
         }
        }
+        //criar um obj cadeira individualmente
 
-      //  let obj_cadeira = new classeCadeiras(4, false, 'azul')
-      //  let obj_cadeira2 = new classeCadeiras(3, true, 'vermelha')
-      //  let obj_cadeira3 = new classeCadeiras(3, true, 'vermelha')
-       //criar nova cadeira
+      //  let obj_cadeira = new classeCadeira(4, false, 'azul')
+      //  let obj_cadeira2 = new classeCadeira(3, true, 'vermelha')
+      //  let obj_cadeira3 = new classeCadeira(3, true, 'vermelha')
+      
 
-       //criar um array de cadeiras
+       //criar um array de cadeiras(varias)
        let cadeiras = Array()
 
-       cadeiras.push(new classeCadeiras(4, false, 'azul'))
-       cadeiras.push(new classeCadeiras(1, true, 'branca'))
+       cadeiras.push(new classeCadeira(4, false, 'azul'))
+       cadeiras.push(new classeCadeira(1, true, 'branca'))
+       cadeiras.push(new classeCadeira(1, true, 'verde'))
 
        console.log(cadeiras)
       //  console.log(obj_cadeira)
@@ -94,6 +96,7 @@
 
       //  obj_cadeira.girarCadeira()
       //  obj_cadeira2.girarCadeira()
+      //  obj_cadeira3.girarCadeira()
 
 
 

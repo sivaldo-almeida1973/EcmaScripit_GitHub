@@ -7,7 +7,7 @@
 
   <script>
 
-     //class é o modelo do objeto(não é o objeto)
+     //class é o modelo da entidade(não é o objeto)
      class contaBancaria {
 
       constructor() { // atributos(caracteristicas)
@@ -20,8 +20,8 @@
 
       //metodos(acoes)
       depositar(valorDeposito) {
-
         this.saldo += valorDeposito
+
       }
 
       sacar(valorSaque) {
@@ -36,26 +36,29 @@
                   
      }
 
-     //identidade(objeto)
+     //identidade(objeto) instancia do obj
      let x = new contaBancaria()
      let y = new contaBancaria()
 
-    //  //metodo consultarSaldo
-     console.log('saldo: ',x.consultarSaldo())
+    // //  //metodo consultarSaldo
+     console.log('Saldo: ',x.consultarSaldo())
 
-     //metodo fazer um deposito
+    //  //metodo fazer um deposito
      x.depositar(450)
     
 
-      //metodo consultarSaldo
-     console.log('saldo: ',x.consultarSaldo())
+    //   //metodo consultarSaldo
+     console.log('Saldo apos o 1º deposito: ',x.consultarSaldo())
 
-      //metodo sacar
+    //   //metodo sacar
      x.sacar(200)
     
 
-      //metodo consultarSaldo
-     console.log('saldo: ',x.consultarSaldo())
+    //   //metodo consultarSaldo
+     console.log('saldo apos saque: ',x.consultarSaldo())
+
+
+     console.log('saldo de y:',y.consultarSaldo())
      
 
   </script>
