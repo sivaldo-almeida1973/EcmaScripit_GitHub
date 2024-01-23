@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso EcmaScript</title>
+
+
+  <script>
+       class Tv {
+
+          constructor() {
+            // o underline torna o obj privado
+            this._relacaoCanais = Array(2,10,4,5,6,7)
+            this._canalAtivo = 5
+            this._volume = 6
+
+
+          }
+          //o metodo get torna o obj privado em publico(getters)
+          get canalAtivo() {
+
+            return this._canalAtivo
+          }
+        
+          set canalAtivo(canal) {
+            //se o canal informado estiver na relacao ira fazer mudança de canal (-1 não existe)
+              if(this._relacaoCanais.indexOf(canal) !== -1) {
+                this._canalAtivo = canal
+              }
+          }
+       }
+
+       //criar instancia do obj
+       let tv1 = new Tv()
+
+      //  tv1.canalAtivo = 7
+       tv1.canalAtivo = 10
+       console.log(tv1.canalAtivo)
+
+
+
+
+  </script>
+</head>
+<body>
+      <div id="output"></div>
+</body>
+</html>
