@@ -8,12 +8,12 @@
 
 <script>
 
-     class Animal {
+     class Animal {  //classe pai
 
-      constructor() {
-        this.cor = ''
-        this.tamanho = null
-        this.peso = null
+      constructor(cor ,tamanho, peso) {
+        this.cor = cor
+        this.tamanho = tamanho
+        this.peso = peso
       }
 
       dormir() {
@@ -21,66 +21,63 @@
       }
      }
 
-
-
-      class Cachorro extends Animal{
-          constructor() {   
-            super()
-            this.orelhas = 'grandes e caidas'
-          }
-
-          corer() {
-            console.log('correr')
-          }
-
-          rosnar() {
-            console.log('Rosnar')
-          }
+      class Passaro extends Animal { //classe filho
+        constructor(bico, cor, tamanho, peso) {  
+          super(cor, tamanho, peso)      
+          this.bico = bico
         }
 
-
-        class Passaro extends Animal {
-          constructor() {  
-            super()      
-            this.bico = 'curto'
-          }
-
-          voar() {
-            console.log('Voar')
-          }
-
+        voar() {
+          console.log('Voar')
         }
 
+      }
 
-        //class papagaio
-        class Papagaio extends Passaro {
-          constructor() {
-            super()
-            this.sabeFalar = true
-            
-          }
+      //class papagaio(filho de  animal)
+      class Papagaio extends Passaro {
 
-          falar() {
-            console.log('Falar')
-          }
+        constructor(sabeFalar,cor, tamanho, peso) {
+          
+          super('Medio',cor, tamanho, peso)
+          this.sabeFalar = sabeFalar
+         
         }
+        falar() {
+          console.log('Falar')
+        }
+      }
 
-        //instancia
-        let cachorro = new Cachorro()
-        let passaro = new Passaro()
-        let papagaio = new Papagaio()
+      //classe avestruz
+
+      class Avestruz extends Passaro {
+        constructor() {
+          super('Grande','branco e preto', 250 , 2000)
+
+        }
+        enterrarCabeca() {
+          console.log('Enterrar a cabeça')
+        }
+        voar() {
+          console.log('Não sabe voar')
+        }
+      }
 
 
-        // cachorro.dormir()
-        // passaro.dormir()
-        // papagaio.falar()
-        // papagaio.dormir()
-        // papagaio.voar()
+      let papagaio = new Papagaio(true,'verde', 25, 350)
+      console.log(papagaio)
 
-        console.log(cachorro)
-        console.log(passaro)
-        console.log(papagaio)
+      let avestruz = new Avestruz()
+      avestruz.enterrarCabeca()
+      avestruz.voar()
+      
 
+      // let papagaio2 = new Papagaio(false,'vermelho', 15, 150)
+      // console.log(papagaio2)
+
+
+
+
+      
 </script>
 
 </head>
