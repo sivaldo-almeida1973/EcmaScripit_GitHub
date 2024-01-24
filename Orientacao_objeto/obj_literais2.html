@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso EcmaScript</title>
+
+  <script>
+       //literal
+
+       let nome =  'sivaldo'       //document.getElementById('nome').value
+       let idade =   33      // document.getElementById('nome').value
+       let sexo =    'Masculino'      //document.getElementById('nome').value
+       let profissão =  'Programador'        //document.getElementById('nome').value
+
+
+       //criar obj
+       let objeto = {
+        nome: nome,
+        idade: idade,
+        sexo: sexo,
+        profissao: profissão,
+        exibirResumo: function() {
+          console.log(`${this.nome} ,tem ${this.idade}, ${this.sexo},e é ${this.profissao}`)
+        }
+       }
+
+       console.log(objeto)
+       objeto.exibirResumo()
+
+       //melhoria em relacao ao de cima
+       let objeto2 = {
+        nome,
+        idade,
+        sexo,
+        profissão,
+        exibirResumo() {
+        console.log(`${this.nome} ,tem ${this.idade}, ${this.sexo},e é ${this.profissao}`)
+        }
+       }
+
+       console.log(objeto2)
+       objeto2.exibirResumo()
+
+
+  </script>
+
+
+   <style>
+      body{
+        background: #6894a5;
+        color: aliceblue;
+      }
+       fieldset {
+        margin: 10px;
+        padding: 10px;
+       }
+       div {
+        padding: 3px;
+       }
+       .nome {
+        width: 300px;
+       }
+
+      .label1 {
+        padding-right: 20px;
+       }
+
+       .button {
+        padding-left: 35%;
+        
+       }
+
+       
+   </style>
+</head>
+<body>
+     
+    <fieldset>
+          <legend>Preencha o formulário</legend>
+
+          
+          <div>
+            <label class="label1" for="nome">Nome:</label>
+            <input class="nome" type="text" name="nome" id="nome" onkeyup="exibirResumo">
+          </div>
+          <div>
+  
+            <label class="label1" for="nome">Idade :</label>
+            <input type="text" name="nome" id="nome">
+            <label for="sexo">Sexo:</label>
+            <select name="sexo" id="sexo">
+              <option value="M">selecione</option>
+              <option value="F">masculino</option>
+              <option value="F">Feminino</option>
+            </select>
+          </div>
+          <div>
+  
+            <label for="nome">Profissão:</label>
+            <input class="nome" type="text" name="nome" id="nome">
+
+            <div class="button"><button>Avançar</button></div>
+          </div>
+    </fieldset>
+
+     
+  
+</body>
+</html>
