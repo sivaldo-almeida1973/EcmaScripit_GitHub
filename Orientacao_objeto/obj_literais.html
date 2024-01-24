@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso EcmaScript</title>
+
+  <script>
+
+
+       //notacao de classe
+       class Produto {
+        constructor(descricao, preco) {
+          this.descricao = descricao
+          this.preco = preco
+        }
+
+        verDescricao() {
+          console.log(`${this.descricao} por apenas ${this.preco}`)
+        }
+       }
+
+
+       let produto = new Produto('notebook', 2000)
+       produto.verDescricao()
+
+
+       
+       //obj literal==================
+
+
+       let produtoLiteral = {
+        descricao: 'geladeira',
+        preco: 1800,
+        verDescricao: function() {
+          console.log(`${this.descricao} por apenas ${this.preco}`)
+        }
+       }
+
+       produtoLiteral.verDescricao()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
