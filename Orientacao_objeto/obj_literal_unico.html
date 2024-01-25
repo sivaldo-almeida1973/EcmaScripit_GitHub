@@ -6,7 +6,7 @@
   <title>Curso EcmaScript</title>
 
   <script>
-  
+     //obj literal
       let assinatura = {
         idCliente: 1000,
         descricao: 'Acesso a internet',
@@ -16,17 +16,18 @@
       }
       console.log(assinatura.descricao)
 
-      //referencia de acesso
+      //referencia de acesso(não é uma copia)
       let y = assinatura
 
       console.log(y.descricao)
 
 
-      // modificando y que vai tambem alterar( assinatura , que por ser literal é um obj unico)
+      // modificar y que vai tambem alterar( assinatura , que por ser literal é um obj unico)
       y.descricao = 'Internet + tv + telefone'
 
       console.log(assinatura.descricao)
       console.log(y.descricao)
+      
 
 
   </script>
