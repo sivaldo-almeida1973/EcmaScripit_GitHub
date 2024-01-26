@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso EcmaScript</title>
+
+  <script>
+       //obj lietral
+       let produto = {
+        descricao:'notebook',
+        preco: 1800,
+        detalhes: {
+          fabricante: 'abc',
+          modelo: undefined
+        }
+
+       }
+
+       //destructuring
+
+      //  let {descricao, preco} = produto
+      //  console.log(descricao, preco)
+
+      //mudar o nome da variavel para d p
+
+      //  let {descricao: p, preco: d} = produto
+      //  console.log(d, p)
+
+       //valor default
+
+      //  let {descricao: p, preco: d, desconto= 5} = produto
+      //  console.log(d, p, desconto)
+
+      //extrair do obj dentro do outro obj
+      //se o mdelo não for informado , vale o valor deafutl
+      let { detalhes:{fabricante, modelo='não informado'}} = produto
+       console.log(fabricante, modelo)
+
+
+
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

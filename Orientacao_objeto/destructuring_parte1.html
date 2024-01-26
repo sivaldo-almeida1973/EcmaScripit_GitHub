@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso EcmaScript</title>
+
+  <script>
+       //destructuring
+       let frutas = ['Abacaxi', 'Uva', 'Pera','Mamão']
+
+      //  let [a,b, ,c] = frutas   //destructuring
+       let [a,b,c,d,e='banana'] = frutas   //destructuring
+
+       console.log(a,b,c,d,e)
+
+
+       //array bidimensional
+       let coisas = [['Abacaxi', 'Uva', 'Pera','Mamão'],['bibicleta', 'carro']]
+       let[[,,t],[y,x]] = coisas
+
+       console.log(y,x,t)
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
