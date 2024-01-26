@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso EcmaScript</title>
+
+  <script>
+         //contexto spread(espalhar dentro de outras estruturas)
+         //string
+         let tituloArtigo = 'Como utiltizar o operador rest/spread'
+          
+         console.log(tituloArtigo)
+         console.log(...tituloArtigo)
+         console.log([...tituloArtigo])
+          //array
+         let  listaCurso1 = ['NodeJS e MongoDB', 'ES6, TypeScript e Angular 4']
+         let  listaCurso2 = ['Multiplataforma Android/IOS', 'Indrodução ao GNU/Linux']
+         let  listaCurso3 = ['web Completo', 'Android Completo',...listaCurso1, ...listaCurso2]
+
+         console.log(listaCurso3)
+
+
+
+         //objeto literal
+
+         let pessoa = {nome:'sivaldo', 'idade': 27}
+         let clone = {endereco:'rua Brasilia', ...pessoa}
+
+         console.log(clone)
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

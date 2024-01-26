@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso EcmaScript</title>
+
+  <script>
+         //contexto rest(juntar dentro de outras estruturas)
+         //funcao
+         function soma(...param) {
+          let resultado = 0
+          console.log(param)
+
+          param.forEach(v => resultado += v)
+
+          return resultado
+         }
+
+        //  console.log(soma(1,4,6,78,100,-1000))
+
+        //m vai receber o primeiro valor 
+        //p vai receber todos os otros valores
+         function multiplicacao(m, ...p) {
+          // console.log(m)
+          let resultado = 0
+          // console.log(p)
+
+          p.forEach(v => resultado += m * v)
+
+          return resultado
+         }
+
+        console.log( multiplicacao(5,6,8,9,49))
+       
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
