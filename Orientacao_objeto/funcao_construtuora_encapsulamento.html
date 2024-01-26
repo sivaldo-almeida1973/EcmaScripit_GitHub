@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso EcmaScript</title>
+
+  <script>
+        //funcao construtora========================
+       let Carro = function() {
+            this.cor = 'Amarelo'
+            this.modelo = 'chevette'
+            this.velocidadeAtual = 0
+            this.velocidadeMaxima = 280
+
+         this.acelerar = function() {
+          let velocidade = this.getVelocidadeAtual() + 50  
+          //velocidade não pode ser maior que a volcidadeMaxima
+          if(velocidade > this.velocidadeMaxima) {
+            velocidade = this.velocidadeMaxima
+            console.log('voce atingiu a velocidade maxima')
+          }
+          this.setVelocidadeAtual(velocidade)
+
+         }
+
+         this.getVelocidadeAtual = function() {
+          return this.velocidadeAtual
+         }
+
+         this.setVelocidadeAtual = function(velocidadeAtual) {
+          this.velocidadeAtual = velocidadeAtual
+         }
+       }
+
+       let carro = new Carro()
+       console.log(carro.velocidadeAtual)
+       carro.acelerar()
+       carro.acelerar()
+       carro.acelerar()
+       carro.acelerar()
+       console.log(carro.velocidadeAtual)
+       carro.acelerar()
+       carro.acelerar()
+       console.log('velocidade atual do carro:',carro.velocidadeAtual)
+
+
+      //tornar uma variavel privada========================
+      let Carro2 = function() {
+
+        var velocidadeMaxima = 180
+        var kmRodaddos = 0
+
+        this.cor = 'Amarelo'
+        this.modelo = 'chevette'
+        this.velocidadeAtual = 0
+        // this.velocidadeMaxima = 280
+
+        this.acelerar = function() {
+
+        let velocidade = this.getVelocidadeAtual() + 50  
+        //velocidade não pode ser maior que a volcidadeMaxima
+        if(velocidade > velocidadeMaxima) {
+          velocidade = velocidadeMaxima
+          // console.log('voce atingiu a velocidade maxima')
+        }
+        this.setVelocidadeAtual(velocidade)
+        setQuilometrosRodados(0.07)
+        console.log(kmRodaddos)
+       
+        }//----------------------------------------------
+
+        this.getVelocidadeAtual = function() {
+        return this.velocidadeAtual
+        }//---------------------------------------------
+
+        this.setVelocidadeAtual = function(velocidadeAtual) {
+        this.velocidadeAtual = velocidadeAtual
+        }//-------------------------------------------------
+
+        var setQuilometrosRodados = function(q) {
+          kmRodaddos += q
+        }
+      }
+
+
+      let carro2 = new Carro2()
+       console.log(carro2.velocidadeAtual)
+       carro2.acelerar()
+       carro2.acelerar()
+       carro2.acelerar()
+       carro2.acelerar()
+       console.log(carro2.velocidadeAtual)
+       carro2.acelerar()
+       carro2.acelerar()
+       console.log('velocidade atual do carro:',carro2.velocidadeAtual)
+
+       console.log(carro)
+       console.log(carro2)
+     
+     
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curso EcmaScript</title>
+
+  <script>
+
+        //obj literal
+        let bicicleta1 = {
+          cor: 'branca',
+          marcha: 'unica',
+          aro: '12',
+          pedalar() {console.log('Metodo pedalar executado')}
+        }
+
+        let bicicleta2 = {
+          cor: 'cinza',
+          marcha: '18',
+          aro: '12',
+          pedalar() {console.log('Metodo pedalar executado')}
+        }
+         console.log(bicicleta1)
+         console.log(bicicleta2)
+
+        //======================================================
+
+        //funcao factory========================
+        let BicicletaFactory = function(cor, marcha, aro,pedal) {
+          //logica//requisicao http/resposta http
+          return {
+            cor: cor,
+            marcha: marcha,
+            aro:aro,
+            tipoPedal: pedal,
+            pedalar() {console.log('Mtodo pedalar executado')}
+          }
+
+        }
+
+        let Bicicleta3 = BicicletaFactory('vermelha', '18', 26,)
+        console.log(Bicicleta3)
+     
+        let Bicicleta4 = BicicletaFactory('verde', '20', 236, 'quadrado')
+        console.log(Bicicleta4)
+     
+     
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
