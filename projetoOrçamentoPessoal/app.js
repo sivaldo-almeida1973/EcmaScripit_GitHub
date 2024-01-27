@@ -9,6 +9,45 @@ class Despesa {
   }//classe que gera o obj  despesa
 }
 
+
+//------------------criar calss BD----------------------------------------
+
+class Bd {
+  constructor() {
+    //verificar se esta info existe
+    let id = localStorage.getItem('id')
+
+    if(id === null)  {
+      localStorage.setItem('id', 0)
+    }
+
+  }
+  //funcao de logica para criar novo ID
+  getProximoId() {
+    let proximoId = localStorage.getItem('id')
+    return parseInt(proximoId) + 1
+
+  }
+
+  //metodo  gravar
+  gravar(d) {
+    //JSON.stringify converte obj literal para JSON 
+   //JSON.parse converte de JSON para ob literal
+   //setItem(inserir no local srorage)
+   
+    let id = this.getProximoId()
+
+    localStorage.setItem(id, JSON.stringify(d))
+    //atualizar o id
+    localStorage.setItem('id' ,id )
+
+  }
+  
+}
+//chamar instancia da class Bd
+let bd = new Bd()
+
+
 //ligada ao botao index.html
 function cadastrarDespesas() {
   //criar var para referenciar os valores dos campos
@@ -27,20 +66,11 @@ function cadastrarDespesas() {
     tipo.value,
     descricao.value,
     valor.value
-)
+  )
 //funcao que liga ao local storage
-gravar(despesa)
+  bd.gravar(despesa)
 
 }
-//funcao que liga ao local storage
-function gravar(d) {
-  //converter o arquivo (despesa) para JSON para enviar ao local storage
-  localStorage.setItem('despesa', JSON.stringify(d))
-}
-
-//JSON.stringify converte obj literal para JSON
-
-//JSON.parse converte de JSON para ob literal
 
 
 
