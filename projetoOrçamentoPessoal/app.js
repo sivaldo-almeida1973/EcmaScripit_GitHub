@@ -1,4 +1,4 @@
-class Despesa {
+class Despesa {//classe que gera o obj  despesa
   constructor(ano, mes, dia, tipo, descricao, valor) {
     this.ano = ano
     this.mes = mes
@@ -6,70 +6,84 @@ class Despesa {
     this.tipo = tipo
     this.descricao = descricao
     this.valor = valor
-  }//classe que gera o obj  despesa
+  }
+   //metodo valiadr dados--------------------------------------
+   //percorrer cada um dos elementos do metodo despesa
+   validarDados() {
+      for(let i in this) {
+        if(this[i] == undefined || this[i] == '' || this[i] == null) {
+        return false
+      }
+      
+   }
+   //se estiver todos preechidos 
+    return true
+   }
 }
 
 
-//------------------criar calss BD----------------------------------------
+//------------------criar class BD----------------------------
 
 class Bd {
-  constructor() {
-    //verificar se esta info existe
-    let id = localStorage.getItem('id')
+    constructor() {
+      //logica para recuperar o primeiro id(0)
+      let id = localStorage.getItem('id')
 
-    if(id === null)  {
-      localStorage.setItem('id', 0)
+      if(id === null)  {
+        //recuperar um dado(set) do local storage
+        localStorage.setItem('id', 0)
+      }
+    }
+    //funcao para atualizar novo ID
+    getProximoId() {
+      let proximoId = localStorage.getItem('id')
+      return parseInt(proximoId) + 1
+
     }
 
-  }
-  //funcao de logica para criar novo ID
-  getProximoId() {
-    let proximoId = localStorage.getItem('id')
-    return parseInt(proximoId) + 1
+    gravar(d) {    
+      let id = this.getProximoId()
+      //atualizar o id no local storage
+      localStorage.setItem(id, JSON.stringify(d))
+      localStorage.setItem('id' ,id )
 
-  }
-
-  //metodo  gravar
-  gravar(d) {
-    //JSON.stringify converte obj literal para JSON 
-   //JSON.parse converte de JSON para ob literal
-   //setItem(inserir no local srorage)
-   
-    let id = this.getProximoId()
-
-    localStorage.setItem(id, JSON.stringify(d))
-    //atualizar o id
-    localStorage.setItem('id' ,id )
-
-  }
+    }
   
 }
-//chamar instancia da class Bd
+//chamar instancia da class Bd------------------------------------
 let bd = new Bd()
 
 
 //ligada ao botao index.html
 function cadastrarDespesas() {
-  //criar var para referenciar os valores dos campos
-  let ano = document.getElementById('ano')
-  let mes = document.getElementById('mes')//.value
-  let dia = document.getElementById('dia')
-  let tipo = document.getElementById('tipo')
-  let descricao = document.getElementById('descricao')
-  let valor = document.getElementById('valor')
+    //criar var para referenciar os valores dos campos
+    let ano = document.getElementById('ano')
+    let mes = document.getElementById('mes')//.value
+    let dia = document.getElementById('dia')
+    let tipo = document.getElementById('tipo')
+    let descricao = document.getElementById('descricao')
+    let valor = document.getElementById('valor')
 
-    //instancia da classe Despesa
-  let despesa = new Despesa(
-    ano.value,
-    mes.value,
-    dia.value, 
-    tipo.value,
-    descricao.value,
-    valor.value
-  )
-//funcao que liga ao local storage
-  bd.gravar(despesa)
+      //instancia da classe Despesa
+    let despesa = new Despesa(
+      ano.value,
+      mes.value,
+      dia.value, 
+      tipo.value,
+      descricao.value,
+      valor.value
+    )
 
+     //chamada o obj da classe bd
+    if(despesa.validarDados()) {//se os dados forem validos
+       bd.gravar(despesa)
+       //dialog de sucesso
+       $('#sucessoGravacao').modal('show')
+    }else {
+      //dialog de erro
+      $('#erroGravacao').modal('show')
+
+    }
 }
 
 
