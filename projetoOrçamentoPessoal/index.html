@@ -17,7 +17,8 @@
     <script src="app.js"></script>
 	</head>
 
-  <body>
+   <!-- chmada da função do app.js -->
+  <body onload="carregaListaDespesas()">
           <!-- pagina de cadastro -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-5">
@@ -112,44 +113,25 @@
 
    
 
-    <!-- Modal -->
-    <div class="modal fade" id="erroGravacao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header text-danger">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Erro na gravação</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            Existem campos obrigratórios que não foram preechidos
-          </div>
-          <div class="modal-footer">
-          
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Voltar e corrigir</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
      <!-- Modal -->
-     <div class="modal fade" id="sucessoGravacao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-      <div class="modal-dialog">
+     <div class="modal fade" id="modalRegistraDespesa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header text-success">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Registro inserido com sucesso</h1>
+          <div id="modal_titulo_div">
+            <h5 class="modal-title fs-5" id="modal_titulo"></h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            Despesa foi Cadastrada com sucesso
+
+          <div class="modal-body" id="modal_conteudo" >
+
           </div>
-          <div class="modal-footer">
-          
-            <button type="button" class="btn btn-success" data-dismiss="modal">Voltar</button>
+          <div class="modal-footer">     
+            <button type="button"  data-dismiss="modal" id="modal_btn">Voltar</button>
           </div>
+
         </div>
       </div>
     </div>
