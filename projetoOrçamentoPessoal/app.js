@@ -60,12 +60,12 @@ class Bd {
         //recuperar a desepesa(e converter para obj literal)
         let despesa = JSON.parse(localStorage.getItem(i))
         
-        //se existe existe removidos
-        //pular esses indices
+        //verificar se existe indices que foram removidos
+        //nesse caso vamos pular esses indices
         if(despesa === null) {
           continue
         }
-
+        //acrescenta despesa dentro do array despesas
         despesas.push(despesa)
 
       }
@@ -100,7 +100,7 @@ function cadastrarDespesas() {
 
      //chamada o obj da classe bd
     if(despesa.validarDados()) {//se os dados forem validos
-       //bd.gravar(despesa)
+       bd.gravar(despesa)
 
        document.getElementById('modal_titulo').innerHTML = 'Registro inserido com sucesso!'
        document.getElementById('modal_titulo_div').className = 'modal-header text-success'
@@ -110,6 +110,15 @@ function cadastrarDespesas() {
        
        //dialog de sucesso
        $('#modalRegistraDespesa').modal('show')
+
+       //faz a limpeza dos campos de cadastrar despesas , para inserir o prox.
+       ano.value = ''
+       mes.value = ''
+       dia.value = ''
+       tipo.value = ''
+       descricao.value = ''
+       valor.value = ''
+
     }else {
 
       //dialog de erro
@@ -125,12 +134,56 @@ function cadastrarDespesas() {
 }
 
 //---------onload="carregaListaDsepesas()" no body-------------------------------------
+
 function carregaListaDespesas() {
   let despesas = Array()
 
   despesas =  bd.recuperarTodosRegistros()
+    
+  //selecionando o elemento tbody da tabela
+  let listaDespesas = document.getElementById('listaDespesas')
 
-  console.log(despesas)
+  /* <tr>
+  <td>15/03/2024</td>
+  <td>Alimentação</td>
+  <td>Compras do mês</td>
+  <td>444.75</td>
+
+   </tr> */
+
+  //percorrer o array despesas, listando cada despesas de forma dinamica
+  despesas.forEach(function(d) {
+     console.log(d)
+
+    //criando a linha (tr)
+    let linha = listaDespesas.insertRow()
+
+    //criar as colunas (td)
+    linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}`
+
+  
+    //ajustar o tipo
+    switch(d.tipo) {
+
+      case '1': d.tipo = 'Alimentação'
+          break
+      case '2': d.tipo = 'Educação'
+          break
+      case '3': d.tipo = 'Lazer'
+          break
+      case '4': d.tipo = 'Saúde'
+          break
+      case '5': d.tipo = 'Transporte'
+          break
+    }
+
+    linha.insertCell(1).innerHTML = d.tipo
+
+    linha.insertCell(2).innerHTML = d.descricao
+    linha.insertCell(3).innerHTML = d.valor
+    
+  });
+
 }
 
 
