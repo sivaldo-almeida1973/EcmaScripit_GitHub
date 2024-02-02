@@ -72,6 +72,12 @@ class Bd {
 
         return despesas
     }
+
+    //criar metodo pesquisar----------------------------
+    pesquisar(despesa) {
+      console.log(despesa)
+
+    }
   
 }
 //chamar instancia da class Bd------------------------------------
@@ -143,14 +149,6 @@ function carregaListaDespesas() {
   //selecionando o elemento tbody da tabela
   let listaDespesas = document.getElementById('listaDespesas')
 
-  /* <tr>
-  <td>15/03/2024</td>
-  <td>Alimentação</td>
-  <td>Compras do mês</td>
-  <td>444.75</td>
-
-   </tr> */
-
   //percorrer o array despesas, listando cada despesas de forma dinamica
   despesas.forEach(function(d) {
      console.log(d)
@@ -184,6 +182,20 @@ function carregaListaDespesas() {
     
   });
 
+}
+
+function pesquisarDespesa() {
+  let ano = document.getElementById('ano').value
+  let mes = document.getElementById('mes').value
+  let dia = document.getElementById('dia').value
+  let tipo = document.getElementById('tipo').value
+  let descricao = document.getElementById('descricao').value
+  let valor = document.getElementById('valor').value
+
+
+  let despesa = new Despesa(ano, mes, dia, tipo, descricao, valor)
+
+  bd.pesquisar(despesa)
 }
 
 
