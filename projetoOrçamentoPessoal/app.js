@@ -73,9 +73,60 @@ class Bd {
         return despesas
     }
 
-    //criar metodo pesquisar----------------------------
+    //criar metodo fltrar despesas----------------------------
     pesquisar(despesa) {
+      let despesasFiltradas = Array()
+
+      despesasFiltradas = this.recuperarTodosRegistros()
+      
       console.log(despesa)
+
+      console.log(despesasFiltradas)
+     
+
+      //se ano pesquisado for diferente de vazio, aplica o filter 
+      if(despesa.ano != '') {
+        console.log('filtro de ano')
+      //aplicando filter,ano pesuisado == ao ano contido em despesa
+        despesasFiltradas = despesasFiltradas.filter(d => d.ano == despesa.ano)
+      }
+      //mes
+      if(despesa.mes != '') {
+        console.log('Filtro de mes')
+        //aplicando filter,mes pesuisado == ao mes contido em despesa
+          despesasFiltradas = despesasFiltradas.filter(d => d.mes == despesa.mes)
+        }
+
+         //dia
+      if(despesa.dia != '') {
+        console.log('Filtro de dia')
+        //aplicando filter,dia pesuisado == ao dia contido em despesa
+          despesasFiltradas = despesasFiltradas.filter(d => d.dia == despesa.dia)
+        }
+
+        
+         //tipo
+      if(despesa.tipo != '') {
+        console.log('Filtro de tipo')
+        //aplicando filter,tipo pesuisado == ao tipo contido em despesa
+          despesasFiltradas = despesasFiltradas.filter(d => d.tipo == despesa.tipo)
+        }
+
+           //descricao
+      if(despesa.descricao != '') {
+        console.log('Filtro de descricao')
+        //aplicando filter,desc pesuisado == ao desc contido em despesa
+          despesasFiltradas = despesasFiltradas.filter(d => d.descricao == despesa.descricao)
+        }
+
+      //valor
+      if(despesa.valor != '') {
+      console.log('Filtro de valor')
+      //aplicando filter,valor pesuisado == ao valor contido em despesa
+        despesasFiltradas = despesasFiltradas.filter(d => d.valor == despesa.valor)
+      }      
+
+      console.log(despesasFiltradas)
 
     }
   
@@ -151,7 +202,7 @@ function carregaListaDespesas() {
 
   //percorrer o array despesas, listando cada despesas de forma dinamica
   despesas.forEach(function(d) {
-     console.log(d)
+    //  console.log(d)====================================-----------
 
     //criando a linha (tr)
     let linha = listaDespesas.insertRow()
@@ -183,7 +234,8 @@ function carregaListaDespesas() {
   });
 
 }
-
+//funcao pesquisar despesas------------------
+//que aciona o metodo pesquisar do (obj bd)---------------
 function pesquisarDespesa() {
   let ano = document.getElementById('ano').value
   let mes = document.getElementById('mes').value
@@ -196,6 +248,8 @@ function pesquisarDespesa() {
   let despesa = new Despesa(ano, mes, dia, tipo, descricao, valor)
 
   bd.pesquisar(despesa)
+
+
 }
 
 
